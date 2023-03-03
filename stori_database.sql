@@ -703,7 +703,7 @@ DROP TABLE IF EXISTS `collection_results`;
 CREATE TABLE `collection_results` (
     `id` int NOT NULL AUTO_INCREMENT,
     `month` int NOT NULL,
-    `loan_type` varchar(250) NOT NULL,
+    `loan_type` varchar(25) NOT NULL,
     `accounts` int NOT NULL,
     `delinquency_accounts` int NOT NULL,
     `interest_revenue` float NOT NULL,
