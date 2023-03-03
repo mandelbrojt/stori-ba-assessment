@@ -12,4 +12,4 @@ from
     round(`contactability_score` * 0.75 * `total_debt`, 4) as recov_debt,
     round(`contactability_score` * 0.75 * `interest`, 4) as recov_int,
     round((`contactability_score` * 0.75 * `total_debt`) + (`contactability_score` * 0.75 * `interest`), 4) as total_recov
-from `contactability_scores`) as campaign_results;
+from `contactability_scores`) as collections_campaign;
