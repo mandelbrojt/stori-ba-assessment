@@ -2,9 +2,10 @@
 import numpy as np
 import math
 import pandas as pd
+import plotly.express as px
 
 def financial_results(loan_feats_a: dict, loan_feats_b: dict):
-    """Returns the financial results of the given loan types"""
+    """Returns the overall financial results of the given loan types"""
 
     def compute_accounts(initial_accounts: int, growth_rate: float, num_months=12):
         """Computes the number of accounts by each month during a period of 12 months given a MoM growth rate"""
@@ -96,6 +97,30 @@ def financial_results(loan_feats_a: dict, loan_feats_b: dict):
     # Format numbers to have commas per thousand and two decimals
     results_by_loan_type = results_by_loan_type.applymap(lambda x: "{:,.2f}".format(x))
 
+    # Select financial metrics from startup results
+    selected_cols = ["loan_type","quarter","interest_revenue","delinquency_loss","operative_costs","net_income"]
+
+    # Group "income_results" by "loan_type" and "quarter", sum columns, and transpose the result
+    quarterly_results_by_loan_type = income_results[selected_cols].groupby(["loan_type","quarter"]).sum().T
+
+    # Format numbers to have commas per thousand and two decimals
+    quarterly_results_by_loan_type = quarterly_results_by_loan_type.applymap(lambda x: "{:,.2f}".format(x))
+
+    # net_income_barplot = px.bar(income_results,
+    #                            x="month",
+    #                            y="net_income",
+    #                            color="loan_type",
+    #                            barmode="group",
+    #                            title="Net Income by Loan Type")
+
+    # # Update figure layout
+    # net_income_barplot.update_layout(xaxis_title="Month Number",
+    #                             yaxis_title="Net Income (in mexican pesos)",
+    #                             legend_title="Loan Type")
+
+    # # Set the steps between ticks to 1
+    # net_income_barplot.update_xaxes(dtick=1)
+    
     return results_by_loan_type
 
 if __name__ == "__main__":
