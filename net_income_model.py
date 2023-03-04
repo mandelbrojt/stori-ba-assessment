@@ -2,9 +2,9 @@
 import numpy as np
 import math
 import pandas as pd
-import plotly.express as px
 
 def financial_results(loan_feats_a: dict, loan_feats_b: dict):
+    """Returns the financial results of the given loan types"""
 
     def compute_accounts(initial_accounts: int, growth_rate: float, num_months=12):
         """Computes the number of accounts by each month during a period of 12 months given a MoM growth rate"""
