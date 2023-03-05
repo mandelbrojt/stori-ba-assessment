@@ -23,7 +23,7 @@ For the first part of this assessment I created the following files:
 For the second part of this assessment I created the following files:
 - `part2-collection-strategy-analysis.ipynb`: The Jupyter Notebook to answer all of the questions.
 - `stori_database.sql`: A SQL script that can be imported into a local instance of MySQL to replicate the database.
-- `collection_campaing.sql: A SQL script that computes the results.
+- `collection_campaing.sql`: A SQL script that computes the results.
 - `collections_results.csv`: The results of the collection strategy.
 
 
