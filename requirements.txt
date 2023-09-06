@@ -47,6 +47,6 @@ seaborn==0.12.2
 six @ file:///home/conda/feedstock_root/build_artifacts/six_1620240208055/work
 stack-data==0.6.2
 tenacity==8.2.2
-tornado==6.2
+tornado==6.3.3
 traitlets==5.9.0
 wcwidth==0.2.6
